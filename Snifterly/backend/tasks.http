@@ -1,0 +1,74 @@
+//sirve para hacer peticiones como postman. PARA QUE FUNCIONE, INSTALAR LA EXTENSIÓN REST CLIENT
+@api = http://localhost:3000/usuarios
+@api2 = http://localhost:3000/mediciones
+@api3 = http://localhost:3000/jornadas
+@api4 = http://localhost:3000/jornadaActiva
+@def = http://localhost:3000/def
+
+@api6 = http://localhost:3000/jornada
+
+@api7 = http://localhost:3000/jornada
+
+@api8 = http://localhost:3000/medicion
+
+@api9 = http://localhost:3000/jornada
+
+@api10 = http://localhost:3000/mediciones/first
+
+GET {{api}}
+### Para separar peticiones escribimos triple numeral
+GET {{api3}}
+###
+GET {{api}}/5
+###
+GET {{api3}}/3
+###
+GET {{api}}/count
+###
+GET {{api4}}
+###
+POST {{api7}}/1
+###
+POST {{api9}}/6
+###
+POST {{api8}}/0.2/1
+###
+GET {{api10}}/1
+### No funcional de momento
+POST {{api}}
+Content-Type: application/json
+
+{
+    "idUsuario": 10,
+    "nombre": "Binker",
+    "fechaNacimiento": 2-7-2000,
+    "peso": 60,
+    "altura": 1.81,
+    "email": "exeBinker@gmail.com",
+    "contraseña": "reyLabo",
+    "fechaCreacion": 9-6-2023,
+    "modResistencia": null,
+}
+### No funcional de momento
+POST {{api2}}
+Content-Type: application/json
+
+{
+    "idMedicion": "10",
+    "grado": "0.06",
+    "fecha": "CAST(N'2023-02-21T01:00:00.000' AS DateTime)",
+    "idJornada": "null",
+}
+
+POST {}
+
+POST {{api6}}
+Content-Type: application/json
+
+{
+    "idJornada": 10,
+    "fechaInicio": null,
+    "fechaFin": null,
+    "idUsuario": 1,
+    "activo": false
+}
